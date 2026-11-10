@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Fabara Impress — Imprimerie à Conakry</title>
 <meta name="description" content="Fabara Impress à Conakry (Dixinn, Pharmaguinée) : cachets, cartes de visite, casquettes brodées, éventails de mariage, calendriers, bâches et objets publicitaires. Devis sur WhatsApp.">
-<meta name="theme-color" content="#ea580c">
+<meta name="theme-color" content="#1d4ed8">
 <meta property="og:title" content="Fabara Impress — Imprimerie à Conakry">
 <meta property="og:description" content="Cachets, cartes de visite, casquettes brodées, calendriers et objets publicitaires. Devis rapide sur WhatsApp.">
 <meta property="og:image" content="img/impress-cachets.webp">
@@ -14,13 +14,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
 <style>
-/* Layout : même charte que Fabara Boutique (orange, Poppins) — bandeau, en-tête collant, carrousel, services en cercles, grille d'articles, étapes de commande, formulaire de devis envoyé sur WhatsApp */
+/* Layout : charte bleue propre à Fabara Impress (Poppins), distincte de l'orange de la Boutique — bandeau, en-tête collant, carrousel, services en cercles, grille d'articles, étapes de commande, formulaire de devis envoyé sur WhatsApp */
 :root{
-  --brand:#c2410c; --brand-2:#ea580c; --orange:#f26a1b; --orange-2:#ff8a3d;
-  --bg:#ffffff; --surface:#ffffff; --surface-2:#fff4ec; --ink:#1f1916; --muted:#6f625a; --line:#f1e4da;
-  --dark:#1f1916; --on-dark:#ffffff; --wa:#1fa855; --star:#f59e0b;
+  --brand:#1e3a8a; --brand-2:#1d4ed8; --orange:#2563eb; --orange-2:#60a5fa;
+  --bg:#ffffff; --surface:#ffffff; --surface-2:#eef4ff; --ink:#131a2a; --muted:#5b6478; --line:#dce5f4;
+  --dark:#0f1a33; --on-dark:#ffffff; --wa:#1fa855; --star:#f59e0b;
   --font:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --r:14px; --shadow:0 6px 24px rgba(194,65,12,.10); color-scheme:light;
+  --r:14px; --shadow:0 6px 24px rgba(30,58,138,.10); color-scheme:light;
 }
 *{box-sizing:border-box}[hidden]{display:none!important}
 body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
@@ -69,7 +69,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:va
 .hero h1 em{font-style:normal;color:var(--orange)}
 .hero p{font-size:17px;color:var(--muted);max-width:44ch;margin:0 0 24px}
 .ctas{display:flex;gap:10px;flex-wrap:wrap}
-.cta{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;font-weight:700;padding:14px 26px;border-radius:999px;box-shadow:0 8px 22px rgba(242,106,27,.35);transition:transform .2s}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;font-weight:700;padding:14px 26px;border-radius:999px;box-shadow:0 8px 22px rgba(37,99,235,.35);transition:transform .2s}
 .cta:hover{transform:translateY(-2px)}
 .cta.ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--line);box-shadow:none}
 .hero-art{position:relative;display:grid;place-items:center;min-height:300px}
@@ -177,7 +177,7 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding-block:34px 24px;
 .wa-float svg{width:30px;height:30px}
 
 /* Panier de devis */
-.scrim{position:fixed;inset:0;background:rgba(20,12,8,.5);z-index:70;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim{position:fixed;inset:0;background:rgba(8,14,30,.5);z-index:70;opacity:0;pointer-events:none;transition:opacity .25s}
 .scrim.on{opacity:1;pointer-events:auto}
 .drawer{position:fixed;top:0;right:0;bottom:0;z-index:80;width:min(420px,100%);background:var(--surface);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s ease;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
 .drawer.on{transform:none}
