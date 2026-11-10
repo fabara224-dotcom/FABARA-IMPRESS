@@ -355,8 +355,8 @@ const CATS=[
  {id:'papeterie',name:'Carnets & blocs-notes',img:'blocs-notes-spirale'},
  {id:'badges',name:'Badges & porte-noms',img:'badge-pvc'},
  {id:'objets',name:'Objets publicitaires',img:'kit-publicitaire'},
- {id:'broderie',name:'Casquettes brodées',img:'casq-noms-2'},
- {id:'mariage',name:'Mariages & fêtes',img:'impress-eventails'},
+ {id:'cadeaux',name:'Cadeaux personnalisés',img:'mug-message'},
+ {id:'broderie',name:'Casquettes personnalisées',img:'casq-prenoms'},
  {id:'emballage',name:'Sacs & emballages',img:'impress-sacs-kraft'}
 ];
 
@@ -366,7 +366,7 @@ const P=[
  {id:2,c:'cartes',n:'Cartes de visite (lot de 100)',d:'Recto-verso, papier épais, votre design ou le nôtre.',p:150000,unit:'le lot',cols:[{n:'Recto-verso',h:'#dc2626',img:'impress-cartes'}]},
  {id:3,c:'broderie',n:'Casquette brodée à votre nom',d:'Prénom, numéro ou message brodé.',p:100000,unit:'l\'unité',fit:1,cols:[{n:'Couleurs de la Guinée',h:'#16a34a',img:'casq-noms-2'},{n:'Autres modèles',h:'#dc2626',img:'casq-noms-1'}]},
  {id:4,c:'broderie',n:'Casquette brodée avec votre logo',d:'Idéal pour vos équipes et vos clients.',p:100000,unit:'l\'unité',fit:1,cols:[{n:'Logo en couleur',h:'#f26a1b',img:'casq-fabara-orange'},{n:'Logo noir',h:'#111111',img:'casq-fabara-noir'}]},
- {id:5,c:'mariage',n:'Éventail photo pour mariage',d:'Votre photo et vos prénoms, pour vos invités.',p:15000,unit:'l\'unité',fit:1,cols:[{n:'Photo et prénoms',h:'#c8a24a',img:'impress-eventails'}]},
+ {id:5,c:'cadeaux',n:'Éventail photo pour mariage',d:'Votre photo et vos prénoms, pour vos invités.',p:15000,unit:'l\'unité',fit:1,cols:[{n:'Photo et prénoms',h:'#c8a24a',img:'impress-eventails'}]},
  {id:6,c:'calendriers',n:'Calendrier mural A3 personnalisé',d:'Anniversaire, famille ou entreprise.',p:30000,unit:'l\'unité',fit:1,cols:[{n:'Avec vos photos',h:'#f9a8d4',img:'impress-calendrier-photo'}]},
  {id:7,c:'calendriers',n:'Calendriers & agendas 2026',d:'Calendriers de bureau et agendas à votre logo.',p:null,cols:[{n:'À votre logo',h:'#0f172a',img:'impress-calendriers'}]},
  {id:8,c:'papeterie',n:'Carnets personnalisés',d:'Couverture personnalisée, pour séminaires et cadeaux.',p:null,cols:[{n:'Couverture au logo',h:'#7c2d12',img:'impress-carnets'}]},
@@ -389,7 +389,15 @@ const P=[
  {id:25,c:'papeterie',n:'Cahier spirale personnalisé',d:'Pour forums, formations et événements.',p:null,cols:[{n:'Couverture personnalisée',h:'#ea580c',img:'cahier-spirale'}]},
  {id:26,c:'objets',n:'Stylos personnalisés',d:'Stylos à votre logo, idéal en grande quantité.',p:null,cols:[{n:'Votre logo',h:'#dc2626',img:'stylos'}]},
  {id:27,c:'objets',n:'Kit publicitaire',d:'T-shirt, casquette, mug et clé USB à votre logo.',p:null,fit:1,cols:[{n:'T-shirt, casquette, mug, clé USB',h:'#ef4444',img:'kit-publicitaire'}]},
- {id:28,c:'calendriers',n:'Calendrier de bureau',d:'Calendrier chevalet à spirale, avec vos photos et votre logo.',p:null,cols:[{n:'Format paysage',h:'#b91c1c',img:'cal-bureau-paysage'},{n:'Format portrait',h:'#eab308',img:'cal-bureau-portrait'}]}
+ {id:28,c:'calendriers',n:'Calendrier de bureau',d:'Calendrier chevalet à spirale, avec vos photos et votre logo.',p:null,cols:[{n:'Format paysage',h:'#b91c1c',img:'cal-bureau-paysage'},{n:'Format portrait',h:'#eab308',img:'cal-bureau-portrait'}]},
+ {id:29,c:'cadeaux',n:'Mug personnalisé',d:'Votre photo, votre prénom ou un message d\'amour.',p:70000,unit:'l\'unité',cols:[{n:'Message « Je t\'aime »',h:'#dc2626',img:'mug-message'},{n:'Photos de couple',h:'#ec4899',img:'mug-photos-couple'},{n:'« My Love »',h:'#111111',img:'mug-my-love'},{n:'« Amour de ma vie »',h:'#b91c1c',img:'mug-amour'},{n:'« À mon mari »',h:'#7f1d1d',img:'mug-mon-mari'}]},
+ {id:30,c:'cadeaux',n:'T-shirts couple',d:'Deux T-shirts assortis avec vos prénoms ou votre message.',p:null,cols:[{n:'Votre message',h:'#ffffff',img:'tshirt-message'},{n:'LOVE rouge',h:'#dc2626',img:'tshirt-love-rouge'},{n:'LOVE blanc',h:'#f4f4f5',img:'tshirt-love-blanc'},{n:'Her King / His Queen',h:'#111111',img:'tshirt-king-queen'},{n:'One Love',h:'#991b1b',img:'tshirt-one-love'}]},
+ {id:31,c:'cadeaux',n:'Coque de téléphone photo',d:'Votre photo et votre texte, pour votre modèle de téléphone.',p:null,cols:[{n:'Saint-Valentin',h:'#dc2626',img:'coque-st-valentin'},{n:'Vos photos',h:'#f59e0b',img:'coques-photos'}]},
+ {id:32,c:'cadeaux',n:'Toile de fond pour mariage',d:'Grande bâche avec vos photos et vos prénoms pour la cérémonie.',p:null,cols:[{n:'Exemple réalisé',h:'#be123c',img:'toile-mariage'}]},
+ {id:33,c:'cadeaux',n:'Porte-clés cœur gravé',d:'Prénom gravé, un cadeau qui se garde.',p:null,fit:1,cols:[{n:'Prénom gravé',h:'#dc2626',img:'porte-cles-coeur'}]},
+ {id:34,c:'cadeaux',n:'Ardoise photo en cœur',d:'Votre photo de famille imprimée sur ardoise, avec support.',p:null,cols:[{n:'Votre photo',h:'#57534e',img:'ardoise-coeur'}]},
+ {id:35,c:'broderie',n:'Casquettes à votre prénom',d:'Prénom ou message en plusieurs couleurs, duo « LOVE » pour les couples.',p:null,cols:[{n:'Prénoms',h:'#facc15',img:'casq-prenoms'},{n:'Duo LOVE',h:'#9f1239',img:'casq-love'}]},
+ {id:36,c:'etiquettes',n:'Étiquettes de vêtements en satin',d:'Étiquettes à coudre au nom de votre marque.',p:null,cols:[{n:'Nom de votre marque',h:'#e5e7eb',img:'etiquettes-satin'}]}
 ];
 const byId=id=>P.find(x=>x.id===id);
 const sel={}, qtyOf={};
@@ -404,7 +412,7 @@ const SLIDES=[
  {e:'Broderie',h:'Casquettes<br><em>brodées</em>',p:'À votre nom, aux couleurs de la Guinée ou avec le logo de votre entreprise.',img:'casq-fabara-orange',go:'broderie'},
  {e:'Factures & reçus',h:'Vos carnets<br><em>à votre en-tête</em>',p:'Carnets de factures autocopiants et carnets de reçus numérotés, avec votre logo et vos coordonnées.',img:'carnet-factures',go:'administratif'},
  {e:'Signalétique',h:'Faites-vous<br><em>remarquer</em>',p:'Roll-up, plaques en plexiglas, caissons lumineux et chevalets de table pour vos bureaux et événements.',img:'roll-up',go:'signaletique'},
- {e:'Mariages & fêtes',h:'Des souvenirs<br><em>pour vos invités</em>',p:'Éventails avec votre photo et vos prénoms, calendriers photo et objets personnalisés.',img:'impress-eventails',go:'mariage'}
+ {e:'Cadeaux personnalisés',h:'Offrez un cadeau<br><em>unique</em>',p:'Mugs, T-shirts couple, coques de téléphone, toiles de mariage et éventails avec vos photos et vos prénoms.',img:'mug-message',go:'cadeaux'}
 ];
 document.getElementById('slides').innerHTML=SLIDES.map((s,k)=>`<div class="slide${k?'':' on'}"><div><span class="eyebrow">${s.e}</span><h1>${s.h}</h1><p>${s.p}</p><div class="ctas"><button class="cta" data-go="${s.go}">Voir les articles →</button><a class="cta ghost" href="#devis">Demander un devis</a></div></div><div class="hero-art"><div class="blob"></div><div class="hero-photo"><img src="${IMG(s.img)}" alt=""></div></div></div>`).join('');
 const dots=document.getElementById('dots'); dots.innerHTML=SLIDES.map((_,k)=>`<button type="button" class="${k?'':'on'}" aria-label="Diapositive ${k+1}"></button>`).join('');
