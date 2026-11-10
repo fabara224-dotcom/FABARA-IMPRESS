@@ -355,9 +355,11 @@ const CATS=[
  {id:'papeterie',name:'Carnets & blocs-notes',img:'blocs-notes-spirale'},
  {id:'badges',name:'Badges & porte-noms',img:'badge-pvc'},
  {id:'objets',name:'Objets publicitaires',img:'kit-publicitaire'},
+ {id:'fairepart',name:'Faire-part & invitations',img:'fairepart-balde-sow'},
  {id:'cadeaux',name:'Cadeaux personnalisés',img:'mug-message'},
+ {id:'guinee',name:'Tenues Guinée',img:'tshirt-guinee'},
  {id:'broderie',name:'Casquettes personnalisées',img:'casq-prenoms'},
- {id:'emballage',name:'Sacs & emballages',img:'impress-sacs-kraft'}
+ {id:'emballage',name:'Sacs & emballages',img:'sac-carton-sylla'}
 ];
 
 /* Articles : prix à l'unité (u) ou au lot, null = sur devis */
@@ -397,7 +399,14 @@ const P=[
  {id:33,c:'cadeaux',n:'Porte-clés cœur gravé',d:'Prénom gravé, un cadeau qui se garde.',p:null,fit:1,cols:[{n:'Prénom gravé',h:'#dc2626',img:'porte-cles-coeur'}]},
  {id:34,c:'cadeaux',n:'Ardoise photo en cœur',d:'Votre photo de famille imprimée sur ardoise, avec support.',p:null,cols:[{n:'Votre photo',h:'#57534e',img:'ardoise-coeur'}]},
  {id:35,c:'broderie',n:'Casquettes à votre prénom',d:'Prénom ou message en plusieurs couleurs, duo « LOVE » pour les couples.',p:null,cols:[{n:'Prénoms',h:'#facc15',img:'casq-prenoms'},{n:'Duo LOVE',h:'#9f1239',img:'casq-love'}]},
- {id:36,c:'etiquettes',n:'Étiquettes de vêtements en satin',d:'Étiquettes à coudre au nom de votre marque.',p:null,cols:[{n:'Nom de votre marque',h:'#e5e7eb',img:'etiquettes-satin'}]}
+ {id:36,c:'etiquettes',n:'Étiquettes de vêtements en satin',d:'Étiquettes à coudre au nom de votre marque.',p:null,cols:[{n:'Nom de votre marque',h:'#e5e7eb',img:'etiquettes-satin'}]},
+ {id:37,c:'fairepart',n:'Faire-part de mariage',d:'Programme, parrain et marraine, avec ou sans photo du couple. Dorure possible.',p:null,cols:[{n:'Noir et or',h:'#111111',img:'fairepart-balde-sow'},{n:'Chocolat et or',h:'#3f2a24',img:'fairepart-camara-diane'},{n:'Save the date photo',h:'#b45309',img:'fairepart-conde'},{n:'Rose, recto-verso',h:'#db2777',img:'fairepart-youla'}]},
+ {id:38,c:'fairepart',n:'Carte d\'invitation gaufrée',d:'Carte découpée et gaufrée en relief, motif cœurs, avec enveloppe.',p:null,cols:[{n:'Motif cœurs',h:'#57534e',img:'carte-coeurs'}]},
+ {id:39,c:'emballage',n:'Sac cadeau de mariage personnalisé',d:'Sac en carton avec la photo et les noms des mariés, pour remercier vos invités.',p:10000,unit:'l\'unité',cols:[{n:'Bleu « Heureux ménage »',h:'#1d4ed8',img:'sac-carton-sylla'},{n:'Photo du couple',h:'#0f172a',img:'sac-magassouba'},{n:'Bleu dégradé',h:'#3b82f6',img:'sac-sylla'},{n:'Sac or',h:'#d97706',img:'sac-sako'}]},
+ {id:40,c:'guinee',n:'T-shirt et polo GUINÉE',d:'Aux couleurs du drapeau, pour la fête de l\'indépendance et les matchs.',p:null,cols:[{n:'T-shirt blanc',h:'#ffffff',img:'tshirt-guinee'},{n:'Polo et T-shirt',h:'#16a34a',img:'polo-guinee'}]},
+ {id:41,c:'guinee',n:'Ensemble sweat « Guinée libre et fière »',d:'Sweat à capuche et jogging, motif fête de l\'indépendance.',p:null,cols:[{n:'67 ans d\'indépendance',h:'#111111',img:'sweat-guinee-67'},{n:'Guinée libre et fière',h:'#facc15',img:'sweat-guinee-fiere'}]},
+ {id:42,c:'guinee',n:'Chemise brodée Guinée',d:'Chemise blanche avec logos brodés ou imprimés, pour vos équipes et programmes.',p:null,cols:[{n:'Blanche, logos',h:'#ffffff',img:'chemise-simandou'}]},
+ {id:43,c:'badges',n:'Macarons / badges ronds',d:'Badges à épingle pour campagnes et événements (Octobre rose, élections, fêtes…).',p:null,cols:[{n:'Octobre rose',h:'#ec4899',img:'macarons-octobre-rose'}]}
 ];
 const byId=id=>P.find(x=>x.id===id);
 const sel={}, qtyOf={};
@@ -412,6 +421,7 @@ const SLIDES=[
  {e:'Broderie',h:'Casquettes<br><em>brodées</em>',p:'À votre nom, aux couleurs de la Guinée ou avec le logo de votre entreprise.',img:'casq-fabara-orange',go:'broderie'},
  {e:'Factures & reçus',h:'Vos carnets<br><em>à votre en-tête</em>',p:'Carnets de factures autocopiants et carnets de reçus numérotés, avec votre logo et vos coordonnées.',img:'carnet-factures',go:'administratif'},
  {e:'Signalétique',h:'Faites-vous<br><em>remarquer</em>',p:'Roll-up, plaques en plexiglas, caissons lumineux et chevalets de table pour vos bureaux et événements.',img:'roll-up',go:'signaletique'},
+ {e:'Mariages',h:'Faire-part<br><em>et sacs cadeaux</em>',p:'Faire-part, save the date et sacs personnalisés avec la photo et les noms des mariés. Sacs cadeaux à 10 000 GNF.',img:'fairepart-balde-sow',go:'fairepart'},
  {e:'Cadeaux personnalisés',h:'Offrez un cadeau<br><em>unique</em>',p:'Mugs, T-shirts couple, coques de téléphone, toiles de mariage et éventails avec vos photos et vos prénoms.',img:'mug-message',go:'cadeaux'}
 ];
 document.getElementById('slides').innerHTML=SLIDES.map((s,k)=>`<div class="slide${k?'':' on'}"><div><span class="eyebrow">${s.e}</span><h1>${s.h}</h1><p>${s.p}</p><div class="ctas"><button class="cta" data-go="${s.go}">Voir les articles →</button><a class="cta ghost" href="#devis">Demander un devis</a></div></div><div class="hero-art"><div class="blob"></div><div class="hero-photo"><img src="${IMG(s.img)}" alt=""></div></div></div>`).join('');
