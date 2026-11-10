@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fabara Impress — Imprimerie à Conakry</title>
+<meta name="description" content="Fabara Impress à Conakry (Dixinn, Pharmaguinée) : cachets, cartes de visite, casquettes brodées, éventails de mariage, calendriers, bâches et objets publicitaires. Devis sur WhatsApp.">
+<meta name="theme-color" content="#ea580c">
+<meta property="og:title" content="Fabara Impress — Imprimerie à Conakry">
+<meta property="og:description" content="Cachets, cartes de visite, casquettes brodées, calendriers et objets publicitaires. Devis rapide sur WhatsApp.">
+<meta property="og:image" content="img/impress-cachets.webp">
+<link rel="icon" href="img/logo.jpg">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout : même charte que Fabara Boutique (orange, Poppins) — bandeau, en-tête collant, carrousel, services en cercles, grille d'articles, étapes de commande, formulaire de devis envoyé sur WhatsApp */
+:root{
+  --brand:#c2410c; --brand-2:#ea580c; --orange:#f26a1b; --orange-2:#ff8a3d;
+  --bg:#ffffff; --surface:#ffffff; --surface-2:#fff4ec; --ink:#1f1916; --muted:#6f625a; --line:#f1e4da;
+  --dark:#1f1916; --on-dark:#ffffff; --wa:#1fa855; --star:#f59e0b;
+  --font:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:14px; --shadow:0 6px 24px rgba(194,65,12,.10); color-scheme:light;
+}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--surface)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:6px}
+h1,h2,h3{line-height:1.12;text-wrap:balance;margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.num{font-variant-numeric:tabular-nums}
+
+/* Bandeau */
+.topbar{background:var(--brand);color:#fff;font-size:13px}
+.topbar .wrap{display:flex;gap:28px;align-items:center;padding-block:9px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.topbar span{display:inline-flex;align-items:center;gap:7px}
+.topbar svg{width:16px;height:16px;flex:none}
+.topbar .ml{margin-left:auto}
+
+/* En-tête */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--surface);border-bottom:1px solid var(--line)}
+.head{display:flex;align-items:center;gap:20px;padding-block:14px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo b{font-weight:800;font-size:28px;letter-spacing:-.8px;white-space:nowrap}
+.logo b i{font-style:normal;color:var(--orange)}
+.logo small{font-size:11.5px;color:var(--muted);margin-top:4px;letter-spacing:.3px}
+.search{flex:1;display:flex;min-width:0;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;background:var(--bg)}
+.search input{flex:1;min-width:0;border:0;background:transparent;padding:11px 18px;font:inherit;color:var(--ink);outline:none}
+.search button{background:var(--orange);color:#fff;padding:0 20px}
+.search svg{width:20px;height:20px}
+.icon-btn{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;color:var(--muted);padding:4px 8px;position:relative}
+.icon-btn svg{width:24px;height:24px;color:var(--ink)}
+.badge{position:absolute;top:-2px;right:4px;background:var(--orange);color:#fff;font-size:11px;font-weight:700;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center;padding:0 4px;font-style:normal}
+.nav{display:flex;gap:6px;align-items:center;padding-bottom:12px;overflow-x:auto;scrollbar-width:none}
+.nav button{white-space:nowrap;padding:8px 14px;border-radius:10px;font-size:13.5px;font-weight:500}
+.nav button:hover{background:var(--surface-2)}
+.nav .all{background:var(--brand-2);color:#fff;font-weight:700}
+.nav button.on:not(.all){background:var(--surface-2);color:var(--brand-2);font-weight:700}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.slide{display:none;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding-block:44px 56px}
+.slide.on{display:grid;animation:fade .6s ease}
+@keyframes fade{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+.eyebrow{display:inline-block;background:var(--surface);color:var(--brand-2);border:1px solid var(--line);padding:5px 12px;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase}
+.hero h1{font-size:clamp(32px,5vw,54px);font-weight:800;letter-spacing:-.5px;margin:16px 0 14px;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p{font-size:17px;color:var(--muted);max-width:44ch;margin:0 0 24px}
+.ctas{display:flex;gap:10px;flex-wrap:wrap}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;font-weight:700;padding:14px 26px;border-radius:999px;box-shadow:0 8px 22px rgba(242,106,27,.35);transition:transform .2s}
+.cta:hover{transform:translateY(-2px)}
+.cta.ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--line);box-shadow:none}
+.hero-art{position:relative;display:grid;place-items:center;min-height:300px}
+.hero-art .blob{position:absolute;width:360px;max-width:100%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--orange-2),var(--orange) 60%,transparent 61%);opacity:.9}
+.hero-photo{position:relative;width:min(360px,86%);aspect-ratio:1;max-width:100%;border-radius:28px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.25);border:5px solid var(--surface);background:var(--surface)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.dots button{width:9px;height:9px;border-radius:50%;background:var(--line);transition:width .3s}
+.dots button.on{width:26px;border-radius:5px;background:var(--orange)}
+
+/* Sections */
+section{padding-block:34px 6px}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(20px,2.4vw,26px);font-weight:700;display:flex;align-items:center;gap:10px}
+.sec-head h2 svg{width:28px;height:28px;color:var(--orange);flex:none}
+.sec-head p{margin:4px 0 0;color:var(--muted)}
+.link{color:var(--brand-2);font-weight:700;font-size:14px;white-space:nowrap}
+
+/* Services en cercles */
+.cats{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
+.cat{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;font-size:12.5px;font-weight:500;line-height:1.3}
+.cat .disc{width:100%;max-width:96px;aspect-ratio:1;border-radius:50%;overflow:hidden;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line),var(--shadow);transition:transform .2s,box-shadow .2s;background:var(--surface-2)}
+.cat .disc img{width:100%;height:100%;object-fit:cover}
+.cat:hover .disc,.cat.on .disc{transform:translateY(-4px);box-shadow:0 0 0 2px var(--orange),var(--shadow)}
+
+/* Grille d'articles */
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.thumb{position:relative;aspect-ratio:1;overflow:hidden;background:var(--surface);max-width:100%}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.thumb img.contain{object-fit:contain;padding:6px}
+.card:hover .thumb img{transform:scale(1.04)}
+.tag{position:absolute;top:10px;left:10px;background:var(--brand-2);color:#fff;font-weight:700;font-size:11px;letter-spacing:.4px;text-transform:uppercase;padding:3px 8px;border-radius:6px}
+.info{padding:12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.info h3{font-size:14px;font-weight:600;line-height:1.35}
+.info p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.45}
+.sw{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.sw button{width:18px;height:18px;border-radius:50%;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
+.sw button.on{box-shadow:0 0 0 2px var(--orange)}
+.sw small{color:var(--muted);font-size:12px}
+.qty-row{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.qty-row input{width:72px;font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--line);border-radius:8px;color:var(--ink);background:var(--bg)}
+.buy{display:flex;align-items:end;justify-content:space-between;gap:8px;margin-top:auto}
+.price small{display:block;color:var(--muted);font-size:11.5px}
+.price b{display:block;font-size:16px;font-weight:700;color:var(--brand-2)}
+.price em{font-style:normal;font-weight:700;color:var(--orange);font-size:13px}
+.add{width:40px;height:40px;flex:none;border-radius:11px;background:var(--orange);color:#fff;display:grid;place-items:center;transition:background .2s}
+.add:hover{background:var(--brand-2)}
+.add svg{width:20px;height:20px}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0}
+
+/* Étapes */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+.step{background:var(--surface-2);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.step::before{counter-increment:s;content:counter(s);width:34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;display:grid;place-items:center;margin-bottom:6px}
+.step b{font-size:15px}
+.step span{color:var(--muted);font-size:13px}
+
+/* Bloc sombre « autres travaux » */
+.more{display:grid;grid-template-columns:1fr minmax(0,500px);gap:24px;align-items:center;background:var(--dark);color:var(--on-dark);border-radius:18px;padding:28px}
+.more h2{font-size:clamp(22px,3vw,30px);font-weight:800}
+.more h2 i{font-style:normal;color:var(--orange-2)}
+.more p{margin:8px 0 0;opacity:.82;max-width:60ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tags span{border:1px solid currentColor;opacity:.8;border-radius:999px;padding:4px 12px;font-size:13px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gallery img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:12px;display:block}
+.gallery img:first-child{grid-column:span 3}
+
+/* Devis */
+.quote{display:grid;grid-template-columns:1fr minmax(0,520px);gap:28px;align-items:start;background:var(--surface-2);border-radius:18px;padding:28px}
+.quote h2{font-size:clamp(22px,3vw,28px);font-weight:800}
+.quote ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.quote li{display:flex;gap:10px;align-items:flex-start}
+.quote li::before{content:"✓";color:var(--orange);font-weight:800}
+form.f{display:grid;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
+.f .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f label{display:grid;gap:4px;font-size:13px;color:var(--muted)}
+.f input,.f select,.f textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.f textarea{resize:vertical}
+.f .err{color:#be123c;font-size:13px;margin:0}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--wa);color:#fff;font-weight:700;padding:14px;border-radius:12px}
+.btn-wa svg{width:22px;height:22px}
+
+/* Atouts */
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;border:1px solid var(--line);border-radius:18px;padding:22px}
+.perk{display:flex;gap:14px;align-items:flex-start}
+.perk svg{width:36px;height:36px;flex:none;color:var(--brand-2)}
+.perk b{display:block;font-size:15px}
+.perk small{color:var(--muted);font-size:13px}
+
+/* Pied */
+footer{border-top:1px solid var(--line);margin-top:40px;padding-block:34px 24px;font-size:14px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:24px}
+.foot h4{font-size:16px;margin:0 0 10px}
+.foot ul{list-style:none;padding:0;margin:0;display:grid;gap:7px;color:var(--muted)}
+.foot p{color:var(--muted);margin:8px 0}
+.copy{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.copy code{font-family:var(--font);font-weight:700;font-size:16px;user-select:all}
+.copy button{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--muted)}
+.legal{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+.wa-float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(31,168,85,.45)}
+.wa-float svg{width:30px;height:30px}
+
+/* Panier de devis */
+.scrim{position:fixed;inset:0;background:rgba(20,12,8,.5);z-index:70;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:80;width:min(420px,100%);background:var(--surface);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s ease;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.drawer.on{transform:none}
+.dr-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.dr-head h2{font-size:20px}
+.dr-head button svg{width:24px;height:24px}
+.lines{flex:1;overflow-y:auto;padding:12px 20px;display:flex;flex-direction:column;gap:12px}
+.line{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center}
+.line .mini{width:62px;height:62px;border-radius:10px;overflow:hidden;background:var(--surface-2)}
+.line .mini img{width:100%;height:100%;object-fit:cover}
+.line h3{font-size:14px;font-weight:600}
+.line small{color:var(--muted)}
+.qty{display:flex;align-items:center;gap:8px;margin-top:4px}
+.qty button{width:26px;height:26px;border-radius:8px;border:1px solid var(--line);font-weight:700}
+.rm{color:var(--muted);font-size:12px;text-decoration:underline}
+.dr-foot{border-top:1px solid var(--line);padding:16px 20px;display:grid;gap:10px}
+.total{display:flex;justify-content:space-between;font-size:16px}
+.total b{font-size:20px}
+.dr-foot label{font-size:13px;color:var(--muted);display:grid;gap:4px}
+.dr-foot input{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.btn-wa[aria-disabled="true"]{opacity:.5;pointer-events:none}
+.note{font-size:12px;color:var(--muted);text-align:center;margin:0}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140px);background:var(--dark);color:var(--on-dark);padding:12px 20px;border-radius:999px;font-weight:600;z-index:90;transition:transform .3s;white-space:nowrap}
+.toast.on{transform:translate(-50%,0)}
+
+@media (max-width:1100px){.grid{grid-template-columns:repeat(4,1fr)}.cats{grid-template-columns:repeat(4,1fr);row-gap:18px}}
+@media (max-width:820px){
+  .head{flex-wrap:wrap;gap:12px}.search{order:3;flex-basis:100%}.icons{margin-left:auto}.icon-btn .lbl{display:none}
+  .slide{grid-template-columns:1fr;padding-block:28px 48px}.hero-art{min-height:220px;order:-1}.hero-photo{width:220px}.hero-art .blob{width:230px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:10px}.steps{grid-template-columns:1fr 1fr}.more,.quote{grid-template-columns:1fr}.perks{grid-template-columns:1fr 1fr}.foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:480px){.logo b{font-size:23px}.cats{gap:8px}.cat{font-size:11px}.steps,.perks,.foot{grid-template-columns:1fr}.f .row{grid-template-columns:1fr}.hero p{font-size:15.5px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"/><rect x="6" y="14" width="12" height="7"/></svg>Impression rapide à Conakry</span>
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>Paiement Orange Money, MoMo ou en boutique</span>
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 13a8 8 0 0 1 16 0v4a2 2 0 0 1-2 2h-1v-6h3M4 13v4a2 2 0 0 0 2 2h1v-6H4"/></svg>Devis sur WhatsApp · 626 43 22 76</span>
+  <span class="ml">Prix en GNF</span>
+</div></div>
+
+<header>
+  <div class="wrap">
+    <div class="head">
+      <a class="logo" href="#top" aria-label="Fabara Impress, accueil"><b>Fabara <i>Impress</i></b><small>Imprimerie · Broderie · Objets publicitaires</small></a>
+      <form class="search" id="searchForm" role="search">
+        <input id="q" type="search" placeholder="Rechercher un cachet, des cartes, une casquette…" aria-label="Rechercher un produit">
+        <button type="submit" aria-label="Rechercher"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+      </form>
+      <div class="icons">
+        <button class="icon-btn" id="cartBtn" aria-label="Ma demande de devis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6l1 2h3v16H5V5h3z"/><path d="M9 11h6M9 15h4"/></svg><span class="lbl">Mon devis</span><i class="badge num" id="cartCount">0</i></button>
+      </div>
+    </div>
+    <nav class="nav" id="nav" aria-label="Services"></nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap" id="slides"></div>
+    <div class="dots" id="dots"></div>
+  </div>
+
+  <section class="wrap">
+    <div class="sec-head"><div><h2>Nos services d'impression</h2><p>Touchez un service pour voir les articles et les prix.</p></div></div>
+    <div class="cats" id="cats"></div>
+  </section>
+
+  <section class="wrap" id="shop">
+    <div class="sec-head">
+      <h2 id="shopTitle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"/><rect x="6" y="14" width="12" height="7"/></svg><span>Tous nos articles</span></h2>
+      <button class="link" id="showAll" hidden>Tout afficher →</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="wrap">
+    <div class="sec-head"><div><h2>Comment commander</h2><p>De votre idée à l'objet imprimé, en quatre étapes.</p></div></div>
+    <div class="steps">
+      <div class="step"><b>Envoyez votre demande</b><span>Choisissez vos articles ou décrivez votre besoin, puis envoyez votre logo ou votre texte sur WhatsApp.</span></div>
+      <div class="step"><b>Recevez la maquette</b><span>Nous préparons un aperçu (BAT) avec le prix et le délai.</span></div>
+      <div class="step"><b>Validez et payez</b><span>Orange Money, MTN MoMo ou paiement en boutique à Dixinn.</span></div>
+      <div class="step"><b>Récupérez votre commande</b><span>En boutique ou livrée à Conakry. Intérieur du pays sur demande.</span></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="more">
+      <div>
+        <h2>Et aussi sur <i>devis</i></h2>
+        <p>Pour vos entreprises, événements, mariages, écoles et associations : bâches, T-shirts et polos personnalisés, badges et cordons, calendriers et agendas, carnets, sacs kraft et tous les objets publicitaires à votre logo.</p>
+        <div class="tags"><span>Bâches</span><span>T-shirts personnalisés</span><span>Polos brodés</span><span>Badges &amp; cordons</span><span>Calendriers &amp; agendas</span><span>Carnets &amp; blocs-notes</span><span>Sacs kraft</span><span>Flyers &amp; affiches</span><span>Objets publicitaires</span></div>
+      </div>
+      <div class="gallery"><img src="img/impress-calendriers.webp" alt="Calendriers et agendas" loading="lazy"><img src="img/impress-badges.webp" alt="Badges et cordons" loading="lazy"><img src="img/impress-carnets.webp" alt="Carnets personnalisés" loading="lazy"><img src="img/impress-sacs-kraft.webp" alt="Sacs kraft au logo" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="devis">
+    <div class="quote">
+      <div>
+        <h2>Demandez votre devis</h2>
+        <p style="color:var(--muted);max-width:44ch;margin:10px 0 0">Décrivez ce que vous voulez imprimer. Votre demande s'ouvre dans WhatsApp, prête à envoyer : vous pourrez y joindre votre logo.</p>
+        <ul><li>Réponse avec prix et délai</li><li>Maquette avant impression</li><li>Petites et grandes quantités</li></ul>
+      </div>
+      <form class="f" id="quoteForm" novalidate>
+        <div class="row">
+          <label for="qn">Votre nom<input id="qn" autocomplete="name" placeholder="Ex. Mamadou Bah"></label>
+          <label for="qo">Entreprise ou événement<input id="qo" placeholder="Facultatif"></label>
+        </div>
+        <div class="row">
+          <label for="qs">Service<select id="qs"></select></label>
+          <label for="qq">Quantité<input id="qq" inputmode="numeric" placeholder="Ex. 100"></label>
+        </div>
+        <label for="qd">Détails<textarea id="qd" rows="3" placeholder="Format, couleurs, texte, date souhaitée…"></textarea></label>
+        <p class="err" id="qerr" hidden>Indiquez au moins votre nom et le service souhaité.</p>
+        <button class="btn-wa" type="submit"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>Envoyer sur WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="perks">
+      <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Délais courts</b><small>Cartes et cachets souvent prêts en 24 à 48 h</small></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16M6 16l9-9 3 3-9 9H6z"/></svg><div><b>Maquette offerte</b><small>Vous validez avant toute impression</small></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg><div><b>Paiement mobile</b><small>Orange Money, MTN MoMo ou en boutique</small></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Venez nous voir</b><small>Dixinn, Pharmaguinée, en face de Marocana</small></div></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <div class="foot">
+    <div><a class="logo" href="#top"><b>Fabara <i>Impress</i></b><small>Imprimerie · Broderie · Objets publicitaires</small></a><p>Cachets, cartes de visite, casquettes brodées, éventails de mariage, calendriers, bâches, T-shirts et objets publicitaires à Conakry.</p></div>
+    <div><h4>Services</h4><ul id="footCats"></ul></div>
+    <div><h4>Contact</h4>
+      <p>Dixinn, Pharmaguinée<br>En face de Marocana, Conakry</p>
+      <div class="copy"><code id="phone">626 43 22 76</code><button type="button" id="copyPhone">Copier</button></div>
+      <p><a href="https://wa.me/224626432276" target="_blank" rel="noopener" style="color:var(--wa);font-weight:600">Écrire sur WhatsApp →</a></p>
+    </div>
+  </div>
+  <div class="legal"><span>© 2026 Fabara Impress. Tous droits réservés.</span><span>Prix en francs guinéens (GNF)</span></div>
+</div></footer>
+
+<a class="wa-float" target="_blank" rel="noopener" href="https://wa.me/224626432276?text=Bonjour%20Fabara%20Impress%2C%20je%20voudrais%20un%20devis." aria-label="Écrire sur WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg></a>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Ma demande de devis" aria-hidden="true">
+  <div class="dr-head"><h2>Ma demande de devis</h2><button type="button" id="closeCart" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="lines" id="lines"></div>
+  <div class="dr-foot">
+    <div class="total"><span>Estimation</span><b class="num" id="total">0 GNF</b></div>
+    <label for="cName">Votre nom<input id="cName" type="text" placeholder="Ex. Mamadou Bah"></label>
+    <a class="btn-wa" id="order" target="_blank" rel="noopener" href="#" aria-disabled="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>Envoyer ma demande sur WhatsApp</a>
+    <p class="note">La demande s'ouvre dans WhatsApp, prête à envoyer au 626 43 22 76. Le prix final est confirmé avec la maquette.</p>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const WA='224626432276';
+const IMG=k=>'img/'+k+'.webp';
+const fmt=n=>Math.round(n).toLocaleString('fr-FR').replace(/ | /g,' ')+' GNF';
+
+/* Services (catégories) */
+const CATS=[
+ {id:'cachets',name:'Cachets & tampons',img:'impress-cachets'},
+ {id:'cartes',name:'Cartes de visite',img:'impress-cartes'},
+ {id:'broderie',name:'Casquettes brodées',img:'casq-noms-2'},
+ {id:'mariage',name:'Mariages & fêtes',img:'impress-eventails'},
+ {id:'calendriers',name:'Calendriers & agendas',img:'impress-calendrier-photo'},
+ {id:'papeterie',name:'Carnets & papeterie',img:'impress-carnets'},
+ {id:'badges',name:'Badges & cordons',img:'impress-badges'},
+ {id:'emballage',name:'Sacs & emballages',img:'impress-sacs-kraft'}
+];
+
+/* Articles : prix à l'unité (u) ou au lot, null = sur devis */
+const P=[
+ {id:1,c:'cachets',n:'Cachet rond personnalisé',d:'Votre texte et votre logo, encre au choix.',p:130000,unit:'l\'unité',cols:[{n:'Votre texte et logo',h:'#1d4ed8',img:'impress-cachets'}]},
+ {id:2,c:'cartes',n:'Cartes de visite (lot de 100)',d:'Recto-verso, papier épais, votre design ou le nôtre.',p:150000,unit:'le lot',cols:[{n:'Recto-verso',h:'#dc2626',img:'impress-cartes'}]},
+ {id:3,c:'broderie',n:'Casquette brodée à votre nom',d:'Prénom, numéro ou message brodé.',p:100000,unit:'l\'unité',fit:1,cols:[{n:'Couleurs de la Guinée',h:'#16a34a',img:'casq-noms-2'},{n:'Autres modèles',h:'#dc2626',img:'casq-noms-1'}]},
+ {id:4,c:'broderie',n:'Casquette brodée avec votre logo',d:'Idéal pour vos équipes et vos clients.',p:100000,unit:'l\'unité',fit:1,cols:[{n:'Logo en couleur',h:'#f26a1b',img:'casq-fabara-orange'},{n:'Logo noir',h:'#111111',img:'casq-fabara-noir'}]},
+ {id:5,c:'mariage',n:'Éventail photo pour mariage',d:'Votre photo et vos prénoms, pour vos invités.',p:15000,unit:'l\'unité',fit:1,cols:[{n:'Photo et prénoms',h:'#c8a24a',img:'impress-eventails'}]},
+ {id:6,c:'calendriers',n:'Calendrier mural A3 personnalisé',d:'Anniversaire, famille ou entreprise.',p:30000,unit:'l\'unité',fit:1,cols:[{n:'Avec vos photos',h:'#f9a8d4',img:'impress-calendrier-photo'}]},
+ {id:7,c:'calendriers',n:'Calendriers & agendas 2026',d:'Calendriers de bureau et agendas à votre logo.',p:null,cols:[{n:'À votre logo',h:'#0f172a',img:'impress-calendriers'}]},
+ {id:8,c:'papeterie',n:'Carnets & blocs-notes',d:'Couverture personnalisée, pour séminaires et cadeaux.',p:null,cols:[{n:'Couverture au logo',h:'#7c2d12',img:'impress-carnets'}]},
+ {id:9,c:'badges',n:'Badges & cordons',d:'Pour conférences, écoles et événements.',p:null,cols:[{n:'Nom et logo',h:'#2563eb',img:'impress-badges'}]},
+ {id:10,c:'emballage',n:'Sacs kraft personnalisés',d:'Votre logo sur des sacs pour votre boutique.',p:null,fit:1,cols:[{n:'Avec votre logo',h:'#c8a27a',img:'impress-sacs-kraft'}]}
+];
+const byId=id=>P.find(x=>x.id===id);
+const sel={}, qtyOf={};
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let cart=store.get('fabimp_cart',{}), filter=null;
+Object.keys(cart).forEach(k=>{if(!byId(+k.split('|')[0]))delete cart[k]});
+
+/* Carrousel */
+const SLIDES=[
+ {e:'Cachets & tampons',h:'Votre cachet<br><em>officiel</em>',p:'Cachets ronds et rectangulaires à votre texte et logo, pour entreprises, écoles et administrations.',img:'impress-cachets',go:'cachets'},
+ {e:'Cartes de visite',h:'Une carte qui<br><em>fait bonne impression</em>',p:'Lot de 100 cartes recto-verso sur papier épais, avec maquette avant impression.',img:'impress-cartes',go:'cartes'},
+ {e:'Broderie',h:'Casquettes<br><em>brodées</em>',p:'À votre nom, aux couleurs de la Guinée ou avec le logo de votre entreprise.',img:'casq-fabara-orange',go:'broderie'},
+ {e:'Mariages & fêtes',h:'Des souvenirs<br><em>pour vos invités</em>',p:'Éventails avec votre photo et vos prénoms, calendriers photo et objets personnalisés.',img:'impress-eventails',go:'mariage'}
+];
+document.getElementById('slides').innerHTML=SLIDES.map((s,k)=>`<div class="slide${k?'':' on'}"><div><span class="eyebrow">${s.e}</span><h1>${s.h}</h1><p>${s.p}</p><div class="ctas"><button class="cta" data-go="${s.go}">Voir les articles →</button><a class="cta ghost" href="#devis">Demander un devis</a></div></div><div class="hero-art"><div class="blob"></div><div class="hero-photo"><img src="${IMG(s.img)}" alt=""></div></div></div>`).join('');
+const dots=document.getElementById('dots'); dots.innerHTML=SLIDES.map((_,k)=>`<button type="button" class="${k?'':'on'}" aria-label="Diapositive ${k+1}"></button>`).join('');
+let cur=0; const show=k=>{cur=k;document.querySelectorAll('.slide').forEach((el,j)=>el.classList.toggle('on',j===k));dots.querySelectorAll('button').forEach((el,j)=>el.classList.toggle('on',j===k))};
+let auto; const restart=()=>{clearInterval(auto);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)auto=setInterval(()=>show((cur+1)%SLIDES.length),5500)};
+dots.querySelectorAll('button').forEach((b,k)=>b.onclick=()=>{show(k);restart()}); restart();
+
+/* Services */
+document.getElementById('nav').innerHTML=`<button class="all" data-go="">Tous les services</button>`+CATS.map(c=>`<button data-go="${c.id}">${c.name}</button>`).join('')+`<button data-scroll="devis">Devis sur mesure</button>`;
+const renderCats=()=>{document.getElementById('cats').innerHTML=CATS.map(c=>`<button class="cat${filter===c.id?' on':''}" data-go="${c.id}"><span class="disc"><img src="${IMG(c.img)}" alt="" loading="lazy"></span>${c.name}</button>`).join('')};
+document.getElementById('footCats').innerHTML=CATS.map(c=>`<li><button data-go="${c.id}">${c.name}</button></li>`).join('');
+document.getElementById('qs').innerHTML='<option value="">Choisir un service</option>'+CATS.map(c=>`<option>${c.name}</option>`).join('')+'<option>Bâches</option><option>T-shirts / polos personnalisés</option><option>Flyers / affiches</option><option>Autre</option>';
+
+/* Cartes article */
+const card=x=>{const ci=sel[x.id]||0,c=x.cols[ci];return `<article class="card" data-card="${x.id}"><div class="thumb">${x.p?'':'<span class="tag">Sur devis</span>'}<img${x.fit?' class="contain"':''} src="${IMG(c.img)}" alt="${x.n}, ${c.n}" loading="lazy"></div><div class="info"><h3>${x.n}</h3><p>${x.d}</p><div class="sw">${x.cols.length>1?x.cols.map((o,k)=>`<button type="button" class="${k===ci?'on':''}" style="background:${o.h}" data-col="${x.id}|${k}" aria-label="${o.n}" title="${o.n}"></button>`).join(''):''}<small>${c.n}</small></div><label class="qty-row" for="qty-${x.id}">Quantité <input id="qty-${x.id}" data-qty="${x.id}" type="number" min="1" inputmode="numeric" value="${qtyOf[x.id]||1}"></label><div class="buy"><div class="price num">${x.p?`<small>${x.unit}</small><b>${fmt(x.p)}</b>`:'<em>Prix sur devis</em>'}</div><button type="button" class="add" data-add="${x.id}" aria-label="Ajouter ${x.n} à ma demande"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>`};
+
+function renderShop(){
+  const q=document.getElementById('q').value.trim().toLowerCase();
+  let list=P,title='Tous nos articles';
+  if(q){list=P.filter(x=>(x.n+' '+x.d+' '+(CATS.find(c=>c.id===x.c)||{}).name).toLowerCase().includes(q));title=`Résultats pour « ${q} »`}
+  else if(filter){list=P.filter(x=>x.c===filter);title=CATS.find(c=>c.id===filter).name}
+  document.querySelector('#shopTitle span').textContent=title;
+  document.getElementById('showAll').hidden=!(q||filter);
+  document.getElementById('grid').innerHTML=list.length?list.map(card).join(''):`<p class="empty">Aucun article trouvé. Demandez un devis sur mesure, nous imprimons presque tout.</p>`;
+  document.querySelectorAll('.nav button[data-go]').forEach(b=>b.classList.toggle('on',(b.dataset.go||null)===filter&&!q));
+  renderCats();
+}
+
+/* Demande de devis (panier) */
+const keyOf=k=>{const [id,ci]=String(k).split('|');return {x:byId(+id),ci:+ci||0}};
+function renderCart(){
+  store.set('fabimp_cart',cart);
+  const ids=Object.keys(cart);
+  document.getElementById('cartCount').textContent=ids.length;
+  document.getElementById('lines').innerHTML=ids.length?ids.map(id=>{const {x,ci}=keyOf(id);return `<div class="line"><div class="mini"><img src="${IMG(x.cols[ci].img)}" alt=""></div><div><h3>${x.n}</h3><small class="num">${x.cols.length>1?x.cols[ci].n+' · ':''}${x.p?fmt(x.p)+' '+x.unit:'Prix sur devis'}</small><div class="qty"><button type="button" data-dec="${id}" aria-label="Moins">−</button><b class="num">${cart[id]}</b><button type="button" data-inc="${id}" aria-label="Plus">+</button></div></div><button type="button" class="rm" data-rm="${id}">Retirer</button></div>`}).join(''):'<p class="empty">Votre demande est vide.<br>Ajoutez des articles avec le bouton orange.</p>';
+  const tot=ids.reduce((s,id)=>s+(keyOf(id).x.p||0)*cart[id],0), ask=ids.some(id=>!keyOf(id).x.p);
+  document.getElementById('total').textContent=ids.length&&ask?(tot?fmt(tot)+' + devis':'Sur devis'):fmt(tot);
+  const name=document.getElementById('cName').value.trim();
+  const msg='Bonjour Fabara Impress, je voudrais un devis pour :\n'+ids.map(id=>{const {x,ci}=keyOf(id);return `• ${cart[id]} × ${x.n}${x.cols.length>1?' – '+x.cols[ci].n:''} (${x.p?fmt(x.p)+' '+x.unit:'prix à me communiquer'})`}).join('\n')+`\n\nEstimation : ${ask?(tot?fmt(tot)+' + articles sur devis':'à confirmer'):fmt(tot)}`+(name?`\nNom : ${name}`:'')+'\nJe vous envoie mon logo / mon texte ici.';
+  const o=document.getElementById('order'); o.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg); o.setAttribute('aria-disabled',ids.length?'false':'true');
+}
+const toast=t=>{const el=document.getElementById('toast');el.textContent=t;el.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('on'),2000)};
+const openCart=on=>{document.getElementById('drawer').classList.toggle('on',on);document.getElementById('scrim').classList.toggle('on',on);document.getElementById('drawer').setAttribute('aria-hidden',!on)};
+
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-col],[data-add],[data-inc],[data-dec],[data-rm],[data-go],[data-scroll]'); if(!t)return;
+  const d=t.dataset;
+  if(d.col){const [id,k]=d.col.split('|').map(Number);sel[id]=k;document.querySelectorAll(`[data-card="${id}"]`).forEach(c=>c.outerHTML=card(byId(id)))}
+  else if(d.add){const x=byId(+d.add);const q=Math.max(1,parseInt(qtyOf[x.id]||1)||1);const key=`${x.id}|${sel[x.id]||0}`;cart[key]=(cart[key]||0)+q;renderCart();toast('Ajouté à votre demande ✓')}
+  else if(d.inc){cart[d.inc]++;renderCart()}
+  else if(d.dec){if(--cart[d.dec]<=0)delete cart[d.dec];renderCart()}
+  else if(d.rm){delete cart[d.rm];renderCart()}
+  else if(d.scroll){document.getElementById(d.scroll).scrollIntoView({behavior:'smooth'})}
+  else if('go' in d){filter=d.go||null;document.getElementById('q').value='';renderShop();document.getElementById('shop').scrollIntoView({behavior:'smooth'})}
+});
+document.addEventListener('input',e=>{const t=e.target.closest('[data-qty]');if(t)qtyOf[t.dataset.qty]=t.value});
+document.getElementById('cartBtn').onclick=()=>openCart(true);
+document.getElementById('closeCart').onclick=()=>openCart(false);
+document.getElementById('scrim').onclick=()=>openCart(false);
+document.getElementById('cName').oninput=renderCart;
+document.getElementById('showAll').onclick=()=>{filter=null;document.getElementById('q').value='';renderShop()};
+document.getElementById('searchForm').onsubmit=e=>{e.preventDefault();filter=null;renderShop();document.getElementById('shop').scrollIntoView({behavior:'smooth'})};
+document.getElementById('q').oninput=()=>{if(!document.getElementById('q').value)renderShop()};
+document.getElementById('copyPhone').onclick=()=>{const el=document.getElementById('phone');(navigator.clipboard?navigator.clipboard.writeText('+224 626 43 22 76'):Promise.reject()).then(()=>toast('Numéro copié')).catch(()=>getSelection().selectAllChildren(el))};
+
+/* Formulaire de devis → WhatsApp */
+document.getElementById('quoteForm').onsubmit=e=>{
+  e.preventDefault();
+  const g=id=>document.getElementById(id).value.trim();
+  if(!g('qn')||!g('qs')){document.getElementById('qerr').hidden=false;return}
+  document.getElementById('qerr').hidden=true;
+  const msg=`Bonjour Fabara Impress, je voudrais un devis.\nNom : ${g('qn')}`+(g('qo')?`\nEntreprise / événement : ${g('qo')}`:'')+`\nService : ${g('qs')}`+(g('qq')?`\nQuantité : ${g('qq')}`:'')+(g('qd')?`\nDétails : ${g('qd')}`:'');
+  const a=document.createElement('a');a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();
+  toast('Votre demande s\'ouvre dans WhatsApp');
+};
+
+renderShop(); renderCart();
+</script>
+
+</body>
+</html>
