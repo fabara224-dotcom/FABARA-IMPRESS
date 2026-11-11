@@ -111,6 +111,9 @@ section{padding-block:34px 6px}
 .sw button{width:18px;height:18px;border-radius:50%;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
 .sw button.on{box-shadow:0 0 0 2px var(--orange)}
 .sw small{color:var(--muted);font-size:12px}
+.opts{display:flex;flex-wrap:wrap;gap:6px}
+.opts button{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:var(--bg)}
+.opts button.on{border-color:var(--orange);background:var(--surface-2);color:var(--brand-2)}
 .qty-row{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
 .qty-row input{width:72px;font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--line);border-radius:8px;color:var(--ink);background:var(--bg)}
 .buy{display:flex;align-items:end;justify-content:space-between;gap:8px;margin-top:auto}
@@ -371,14 +374,14 @@ const P=[
  {id:5,c:'cadeaux',n:'Éventail photo pour mariage',d:'Votre photo et vos prénoms, pour vos invités.',p:15000,unit:'l\'unité',fit:1,cols:[{n:'Photo et prénoms',h:'#c8a24a',img:'impress-eventails'},{n:'Rond sur bâtonnet',h:'#d6c7a1',img:'eventail-rond-bayo'},{n:'Éventail plastique rose',h:'#db2777',img:'eventail-coumbassa'}]},
  {id:6,c:'calendriers',n:'Calendrier mural A3 personnalisé',d:'Anniversaire, famille ou entreprise.',p:30000,unit:'l\'unité',fit:1,cols:[{n:'Avec vos photos',h:'#f9a8d4',img:'impress-calendrier-photo'}]},
  {id:7,c:'calendriers',n:'Calendriers & agendas 2026',d:'Calendriers de bureau et agendas à votre logo.',p:null,cols:[{n:'À votre logo',h:'#0f172a',img:'impress-calendriers'}]},
- {id:8,c:'papeterie',n:'Carnets personnalisés',d:'Couverture personnalisée, pour séminaires et cadeaux.',p:null,cols:[{n:'Couverture au logo',h:'#7c2d12',img:'impress-carnets'}]},
+ {id:8,c:'papeterie',n:'Carnets personnalisés A5',d:'Couverture personnalisée, pour séminaires et cadeaux.',p:null,cols:[{n:'Couverture au logo',h:'#7c2d12',img:'impress-carnets'}]},
  {id:9,c:'badges',n:'Badges & cordons',d:'Pour conférences, écoles et événements.',p:null,cols:[{n:'Nom et logo',h:'#2563eb',img:'impress-badges'}]},
  {id:10,c:'emballage',n:'Sacs kraft personnalisés',d:'Votre logo sur des sacs pour votre boutique.',p:null,fit:1,cols:[{n:'Avec votre logo',h:'#c8a27a',img:'impress-sacs-kraft'}]},
  {id:11,c:'cachets',n:'Cachet rond automatique',d:'Encreur intégré, des milliers d\'empreintes nettes. Pour entreprises et administrations.',p:null,fit:1,cols:[{n:'Rond, votre texte et logo',h:'#2563eb',img:'cachet-rond-auto'}]},
  {id:12,c:'cachets',n:'Cachet dateur automatique',d:'Date réglable et votre mention : « Reçu », « Payé », « Validé »…',p:null,fit:1,cols:[{n:'Jaune',h:'#facc15',img:'cachet-dateur'},{n:'Rouge',h:'#dc2626',img:'cachet-dateur'},{n:'Bleu',h:'#2563eb',img:'cachet-dateur'},{n:'Noir',h:'#111111',img:'cachet-dateur'}]},
  {id:13,c:'cachets',n:'Cachet de poche',d:'Petit cachet qui tient dans la poche ou le sac.',p:null,fit:1,cols:[{n:'Votre nom ou signature',h:'#1e3a8a',img:'cachet-poche'}]},
- {id:14,c:'administratif',n:'Carnet de factures autocopiant',d:'Numéroté, avec votre logo et vos coordonnées, en 2 ou 3 exemplaires.',p:null,cols:[{n:'Exemple réalisé',h:'#1d4ed8',img:'carnet-factures'}]},
- {id:15,c:'administratif',n:'Carnet de reçus',d:'Avec votre en-tête, numéroté, feuillets détachables.',p:null,cols:[{n:'Exemple réalisé',h:'#16a34a',img:'carnet-recus'}]},
+ {id:14,c:'administratif',opt:1,n:'Carnet de factures A5 autocopiant',d:'Avec votre logo et vos coordonnées, en 2 ou 3 exemplaires, numéroté ou non.',p:null,cols:[{n:'Numéroté',p:25000,img:'carnet-factures'},{n:'Non numéroté',p:20000,img:'carnet-factures'}]},
+ {id:15,c:'administratif',opt:1,n:'Carnet de reçus',d:'Avec votre en-tête, feuillets détachables, numéroté ou non.',p:null,cols:[{n:'Numéroté',p:20000,img:'carnet-recus'},{n:'Non numéroté',p:15000,img:'carnet-recus'}]},
  {id:16,c:'administratif',n:'Chemise à rabats personnalisée',d:'Pour vos devis et dossiers clients, avec encoche pour carte de visite.',p:null,cols:[{n:'À vos couleurs',h:'#0891b2',img:'chemise-rabats'}]},
  {id:17,c:'etiquettes',n:'Étiquettes autocollantes pour produits',d:'Pots, bouteilles, cosmétiques : plusieurs matières et finitions.',p:null,cols:[{n:'Votre design',h:'#f59e0b',img:'etiquettes-pots'}]},
  {id:18,c:'signaletique',n:'Roll-up / kakémono',d:'Pour salons, boutiques et événements, livré avec sa structure.',p:null,fit:1,cols:[{n:'Avec structure',h:'#0ea5e9',img:'roll-up'}]},
@@ -395,7 +398,7 @@ const P=[
  {id:29,c:'cadeaux',n:'Mug personnalisé',d:'Votre photo, votre prénom ou un message d\'amour.',p:70000,unit:'l\'unité',cols:[{n:'Message « Je t\'aime »',h:'#dc2626',img:'mug-message'},{n:'Photos de couple',h:'#ec4899',img:'mug-photos-couple'},{n:'« My Love »',h:'#111111',img:'mug-my-love'},{n:'« Amour de ma vie »',h:'#b91c1c',img:'mug-amour'},{n:'« À mon mari »',h:'#7f1d1d',img:'mug-mon-mari'}]},
  {id:30,c:'cadeaux',n:'T-shirts couple',d:'Deux T-shirts assortis avec vos prénoms ou votre message.',p:null,cols:[{n:'Votre message',h:'#ffffff',img:'tshirt-message'},{n:'LOVE rouge',h:'#dc2626',img:'tshirt-love-rouge'},{n:'LOVE blanc',h:'#f4f4f5',img:'tshirt-love-blanc'},{n:'Her King / His Queen',h:'#111111',img:'tshirt-king-queen'},{n:'One Love',h:'#991b1b',img:'tshirt-one-love'}]},
  {id:31,c:'cadeaux',n:'Coque de téléphone photo',d:'Votre photo et votre texte, pour votre modèle de téléphone.',p:null,cols:[{n:'Saint-Valentin',h:'#dc2626',img:'coque-st-valentin'},{n:'Vos photos',h:'#f59e0b',img:'coques-photos'}]},
- {id:32,c:'cadeaux',n:'Toile de fond pour mariage',d:'Grande bâche avec vos photos et vos prénoms pour la cérémonie.',p:null,cols:[{n:'Exemple réalisé',h:'#be123c',img:'toile-mariage'}]},
+ {id:32,c:'cadeaux',n:'Toile de fond pour mariage',d:'Grande bâche de 3 m × 1,50 m avec vos photos et vos prénoms pour la cérémonie.',p:null,cols:[{n:'Exemple réalisé',h:'#be123c',img:'toile-mariage'}]},
  {id:33,c:'cadeaux',n:'Porte-clés cœur gravé',d:'Prénom gravé, un cadeau qui se garde.',p:null,fit:1,cols:[{n:'Prénom gravé',h:'#dc2626',img:'porte-cles-coeur'}]},
  {id:34,c:'cadeaux',n:'Ardoise photo en cœur',d:'Votre photo de famille imprimée sur ardoise, avec support.',p:null,cols:[{n:'Votre photo',h:'#57534e',img:'ardoise-coeur'}]},
  {id:35,c:'broderie',n:'Casquettes à votre prénom',d:'Prénom ou message en plusieurs couleurs, duo « LOVE » pour les couples.',p:null,cols:[{n:'Prénoms',h:'#facc15',img:'casq-prenoms'},{n:'Duo LOVE',h:'#9f1239',img:'casq-love'}]},
@@ -409,9 +412,17 @@ const P=[
  {id:43,c:'badges',n:'Macarons / badges ronds',d:'Badges à épingle pour campagnes et événements (Octobre rose, élections, fêtes…).',p:null,cols:[{n:'Octobre rose',h:'#ec4899',img:'macarons-octobre-rose'}]},
  {id:44,c:'emballage',n:'Sac au logo de votre boutique',d:'Sacs en carton ou en plastique avec votre logo et vos numéros, pour emballer les achats de vos clients.',p:null,cols:[{n:'Sac carton N\'Dé Pauline Shop',h:'#111111',img:'sac-boutique-logo'},{n:'Sac plastique M.C Business Store',h:'#64748b',img:'sac-mc-business'},{n:'Sac plastique Bibich Mèche',h:'#a16207',img:'sac-bibich'}]},
  {id:45,c:'cadeaux',n:'Tirages photo',d:'Vos photos imprimées en petit ou grand format, avec ou sans cadre.',p:null,cols:[{n:'Tirages encadrés',h:'#111111',img:'tirages-photo'}]},
- {id:46,c:'cadeaux',n:'Portrait grand format sur panneau',d:'Votre photo imprimée en grand sur panneau rigide, à poser ou à accrocher.',p:null,cols:[{n:'Panneau rigide',h:'#c2410c',img:'portrait-grand-format'}]},
+ {id:46,c:'cadeaux',n:'Tableau photo sur panneau',d:'Votre photo imprimée sur panneau rigide, à poser ou à accrocher. Autres dimensions sur devis.',p:50000,unit:'le tableau',opt:1,cols:[{n:'A4',p:50000,img:'portrait-grand-format'},{n:'A3',p:100000,img:'portrait-grand-format'},{n:'A2',p:150000,img:'portrait-grand-format'},{n:'80 × 60 cm',p:300000,img:'portrait-grand-format'}]},
  {id:47,c:'etiquettes',n:'Étiquettes de bouteilles pour mariage',d:'Bandes avec la photo et les noms des mariés pour vos bouteilles de jus et d\'eau.',p:null,cols:[{n:'Couple Coumbassa',h:'#db2777',img:'etiquettes-bouteilles-mariage'}]}
 ];
+/* Prix (GNF) : [prix, unité] ou [null, note] */
+const PRIX={11:[130000,"l'unité"],12:[150000,"l'unité"],13:[180000,"l'unité"],16:[35000,"l'unité"],17:[2500,"l'étiquette"],36:[1500,"l'unité"],47:[2500,"l'étiquette"],
+ 18:[1500000,"avec structure"],19:[1500000,"l'unité"],20:[null,'Prix selon la dimension'],21:[150000,"l'unité"],22:[30000,"l'unité"],23:[35000,"badge + cordon"],43:[30000,"l'unité"],
+ 24:[60000,"l'unité"],25:[60000,"l'unité"],8:[25000,"le carnet"],28:[120000,"l'unité"],7:[250000,"l'unité"],26:[30000,"l'unité"],27:[null,'Prix à la demande'],
+ 30:[150000,"la paire"],40:[80000,"l'unité"],41:[250000,"l'ensemble"],42:[200000,"l'unité"],31:[100000,"l'unité"],32:[350000,"3 m × 1,50 m"],33:[30000,"l'unité"],
+ 45:[null,'Prix à la demande'],37:[10000,"l'unité"],38:[10000,"l'unité"],35:[100000,"l'unité"],44:[null,'Prix selon la dimension'],10:[30000,"l'unité"]};
+P.forEach(x=>{const v=PRIX[x.id];if(!v)return;if(v[0]){x.p=v[0];x.unit=v[1]}else{x.p=null;x.note=v[1]}});
+const pr=(x,ci)=>{const c=x.cols[ci||0];return c&&c.p!=null?c.p:x.p};
 const byId=id=>P.find(x=>x.id===id);
 const sel={}, qtyOf={};
 const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
@@ -441,7 +452,7 @@ document.getElementById('footCats').innerHTML=CATS.map(c=>`<li><button data-go="
 document.getElementById('qs').innerHTML='<option value="">Choisir un service</option>'+CATS.map(c=>`<option>${c.name}</option>`).join('')+'<option>Bâches</option><option>T-shirts / polos personnalisés</option><option>Flyers / affiches</option><option>Autre</option>';
 
 /* Cartes article */
-const card=x=>{const ci=sel[x.id]||0,c=x.cols[ci];return `<article class="card" data-card="${x.id}"><div class="thumb">${x.p?'':'<span class="tag">Sur devis</span>'}<img${x.fit?' class="contain"':''} src="${IMG(c.img)}" alt="${x.n}, ${c.n}" loading="lazy"></div><div class="info"><h3>${x.n}</h3><p>${x.d}</p><div class="sw">${x.cols.length>1?x.cols.map((o,k)=>`<button type="button" class="${k===ci?'on':''}" style="background:${o.h}" data-col="${x.id}|${k}" aria-label="${o.n}" title="${o.n}"></button>`).join(''):''}<small>${c.n}</small></div><label class="qty-row" for="qty-${x.id}">Quantité <input id="qty-${x.id}" data-qty="${x.id}" type="number" min="1" inputmode="numeric" value="${qtyOf[x.id]||1}"></label><div class="buy"><div class="price num">${x.p?`<small>${x.unit}</small><b>${fmt(x.p)}</b>`:'<em>Prix sur devis</em>'}</div><button type="button" class="add" data-add="${x.id}" aria-label="Ajouter ${x.n} à ma demande"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>`};
+const card=x=>{const ci=sel[x.id]||0,c=x.cols[ci];return `<article class="card" data-card="${x.id}"><div class="thumb">${pr(x,ci)?'':'<span class="tag">Sur devis</span>'}<img${x.fit?' class="contain"':''} src="${IMG(c.img)}" alt="${x.n}, ${c.n}" loading="lazy"></div><div class="info"><h3>${x.n}</h3><p>${x.d}</p>${x.opt?`<div class="opts">${x.cols.map((o,k)=>`<button type="button" class="${k===ci?'on':''}" data-col="${x.id}|${k}" aria-pressed="${k===ci}">${o.n}</button>`).join('')}</div>`:`<div class="sw">${x.cols.length>1?x.cols.map((o,k)=>`<button type="button" class="${k===ci?'on':''}" style="background:${o.h}" data-col="${x.id}|${k}" aria-label="${o.n}" title="${o.n}"></button>`).join(''):''}<small>${c.n}</small></div>`}<label class="qty-row" for="qty-${x.id}">Quantité <input id="qty-${x.id}" data-qty="${x.id}" type="number" min="1" inputmode="numeric" value="${qtyOf[x.id]||1}"></label><div class="buy"><div class="price num">${pr(x,ci)?`<small>${x.unit}</small><b>${fmt(pr(x,ci))}</b>`:`<em>${x.note||'Prix sur devis'}</em>`}</div><button type="button" class="add" data-add="${x.id}" aria-label="Ajouter ${x.n} à ma demande"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>`};
 
 function renderShop(){
   const q=document.getElementById('q').value.trim().toLowerCase();
@@ -461,11 +472,11 @@ function renderCart(){
   store.set('fabimp_cart',cart);
   const ids=Object.keys(cart);
   document.getElementById('cartCount').textContent=ids.length;
-  document.getElementById('lines').innerHTML=ids.length?ids.map(id=>{const {x,ci}=keyOf(id);return `<div class="line"><div class="mini"><img src="${IMG(x.cols[ci].img)}" alt=""></div><div><h3>${x.n}</h3><small class="num">${x.cols.length>1?x.cols[ci].n+' · ':''}${x.p?fmt(x.p)+' '+x.unit:'Prix sur devis'}</small><div class="qty"><button type="button" data-dec="${id}" aria-label="Moins">−</button><b class="num">${cart[id]}</b><button type="button" data-inc="${id}" aria-label="Plus">+</button></div></div><button type="button" class="rm" data-rm="${id}">Retirer</button></div>`}).join(''):'<p class="empty">Votre demande est vide.<br>Ajoutez des articles avec le bouton orange.</p>';
-  const tot=ids.reduce((s,id)=>s+(keyOf(id).x.p||0)*cart[id],0), ask=ids.some(id=>!keyOf(id).x.p);
+  document.getElementById('lines').innerHTML=ids.length?ids.map(id=>{const {x,ci}=keyOf(id);return `<div class="line"><div class="mini"><img src="${IMG(x.cols[ci].img)}" alt=""></div><div><h3>${x.n}</h3><small class="num">${x.cols.length>1?x.cols[ci].n+' · ':''}${pr(x,ci)?fmt(pr(x,ci))+' '+x.unit:(x.note||'Prix sur devis')}</small><div class="qty"><button type="button" data-dec="${id}" aria-label="Moins">−</button><b class="num">${cart[id]}</b><button type="button" data-inc="${id}" aria-label="Plus">+</button></div></div><button type="button" class="rm" data-rm="${id}">Retirer</button></div>`}).join(''):'<p class="empty">Votre demande est vide.<br>Ajoutez des articles avec le bouton bleu.</p>';
+  const tot=ids.reduce((s,id)=>{const k=keyOf(id);return s+(pr(k.x,k.ci)||0)*cart[id]},0), ask=ids.some(id=>{const k=keyOf(id);return !pr(k.x,k.ci)});
   document.getElementById('total').textContent=ids.length&&ask?(tot?fmt(tot)+' + devis':'Sur devis'):fmt(tot);
   const name=document.getElementById('cName').value.trim();
-  const msg='Bonjour Fabara Impress, je voudrais un devis pour :\n'+ids.map(id=>{const {x,ci}=keyOf(id);return `• ${cart[id]} × ${x.n}${x.cols.length>1?' – '+x.cols[ci].n:''} (${x.p?fmt(x.p)+' '+x.unit:'prix à me communiquer'})`}).join('\n')+`\n\nEstimation : ${ask?(tot?fmt(tot)+' + articles sur devis':'à confirmer'):fmt(tot)}`+(name?`\nNom : ${name}`:'')+'\nJe vous envoie mon logo / mon texte ici.';
+  const msg='Bonjour Fabara Impress, je voudrais un devis pour :\n'+ids.map(id=>{const {x,ci}=keyOf(id);return `• ${cart[id]} × ${x.n}${x.cols.length>1?' – '+x.cols[ci].n:''} (${pr(x,ci)?fmt(pr(x,ci))+' '+x.unit:'prix à me communiquer'})`}).join('\n')+`\n\nEstimation : ${ask?(tot?fmt(tot)+' + articles sur devis':'à confirmer'):fmt(tot)}`+(name?`\nNom : ${name}`:'')+'\nJe vous envoie mon logo / mon texte ici.';
   const o=document.getElementById('order'); o.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg); o.setAttribute('aria-disabled',ids.length?'false':'true');
 }
 const toast=t=>{const el=document.getElementById('toast');el.textContent=t;el.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('on'),2000)};
